@@ -2,6 +2,13 @@
 import ReactDOM from 'react-dom/client';
 import './index.css'
 
+import one from '../src/assets/images/p01.jpg'
+import two from '../src/assets/images/p02.jpg'
+import three from '../src/assets/images/p03.jpg'
+import four from '../src/assets/images/p04.jpg'
+import five from '../src/assets/images/p05.jpg'
+import six from '../src/assets/images/p06.jpg'
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 function Search(){
@@ -9,18 +16,18 @@ function Search(){
     <div className='search-container'>
     <div className='search'>
       <input type='text' placeholder='search'/>
-      <i class="fa-solid fa-magnifying-glass" style={{color: "#050505;"}}></i>
+      <p><i class="fa-solid fa-magnifying-glass" style={{color: "#050505;"}}></i></p>
     </div>
     </div>
   )
 }
 
 function List(props){
+ 
   return(
     <div className='list-container'>
-      
       <div className='container'>
-        <img>{props.myImage}</img>
+        <img src = {props.myImage} alt='person'></img>
     <div className='list-details'>
     <h3>{props.myName}</h3>
     <p className='details'>{props.myDetails}</p>
@@ -37,43 +44,43 @@ function List(props){
 
 var detail = [
   {
-    // myImage : <source >import {  } from "module";</source>,
+    myImage : one ,
     myName :"Jessica Koel",
     myDetails: "hey,Jeol.I here to help you out,please..",
     unread : "Click to read this message",
     myRating: 11.26
   },
   {
-    // myImage : <source >import {  } from "module";</source>,
+    myImage : two ,
     myName :"Komeinal Bolger",
     myDetails: "I'll Send you all the doucuments as soon as possible..",
     unread : "Click to read this message",
     myRating: 12.20
   },
   {
-    // myImage : <source >import {  } from "module";</source>,
+    myImage : three ,
     myName :"Lilly",
     myDetails: "Are you going to business trip next week?",
     unread : "Click to read this message",
-    myRating: 11.26
+    myRating: 12.26
   },
   {
-    // myImage : <source >import {  } from "module";</source>,
-    myName :"Jessica Koel",
+    myImage : four ,
+    myName :"Jannet Merlin",
     myDetails: "hey,Jeol.I here to help you out,please..",
     unread : "Click to read this message",
-    myRating: 11.26
+    myRating: 9.26
   },
   {
-    // myImage : <source >import {  } from "module";</source>,
-    myName :"Jessica Koel",
+    myImage : five ,
+    myName :"Jeni Samuel",
     myDetails: "hey,Jeol.I here to help you out,please..",
     unread : "Click to read this message",
-    myRating: 11.26
+    myRating: 10.26
   },
   {
-    // myImage : <source >import {  } from "module";</source>,
-    myName :"Jessica Koel",
+    myImage : six ,
+    myName :"Jecintha",
     myDetails: "hey,Jeol.I here to help you out,please..",
     unread : "Click to read this message",
     myRating: 11.26
@@ -86,7 +93,7 @@ root.render(
     {
       detail.map(function(items,index)
     {
-      return <List myName = {items.myName} myDetails = {items.myDetails} unread = {items.unread} myRating= {items.myRating}></List>
+      return <List myImage={items.myImage}  myName = {items.myName} myDetails = {items.myDetails} unread = {items.unread} myRating= {items.myRating}></List>
     })
       
   }
